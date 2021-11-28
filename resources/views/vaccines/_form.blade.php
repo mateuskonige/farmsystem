@@ -23,15 +23,6 @@
     </span>
 @enderror
 
-<div class="form-group">
-    <label for="animals_id">Classe do animal</label>
-    <select name="animals_id" class="form-control">
-        @foreach ($animals as $animal)
-            <option value="{{ old('animals_id', $vacina->animals_id ?? null) }}">{{ $animal->id }} - {{$animal->class}}</option>
-        @endforeach
-    </select>
-</div>
-
 @if($errors->any())
     <div>
         <ul>
