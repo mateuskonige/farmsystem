@@ -30,13 +30,11 @@ class VaccinesController extends Controller
     public function store(StoreVaccine $request)
     {
         $validatedData = $request->validated();
-        $animals = Animals::all();
         $vacina = Vaccine::create($validatedData);
-        $animals->where('id', $vacina->animals_id );
         //$validatedData['animals_id'] = $request->Animals::whereBelongsto('animals_id')->id;
 
         $request->session()->flash('status', 'Vacina criada com sucesso!');
-        return redirect()->route('vacinas.index', compact('vacina', 'animals'));
+        return redirect()->route('vacinas.index');
     }
 
     public function edit($id)

@@ -20,8 +20,4 @@ class Cow extends Model
         return Carbon::parse($date)->format('d M, Y');
     }
 
-    public function vaccines(){
-        return $this->belongsToMany('App\Vaccines', 'vaccines_id')->latest();
-    }
-
 }

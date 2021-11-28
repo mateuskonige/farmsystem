@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Animals;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -18,8 +19,7 @@ class Vaccine extends Model
 
     public function animals()
     {
-        return $this->belongsTo('App\Models\Animals', 'animals_id')->withDefault([
-            'animals_id' => 1,
-        ]);
+        return $this->belongsTo(Animals::class, 'animals_id');
+       
     }
 }

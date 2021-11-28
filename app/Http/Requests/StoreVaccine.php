@@ -26,6 +26,7 @@ class StoreVaccine extends FormRequest
         return [
             'name' => 'bail|min:5',
             'description' => 'bail|min:10',
+            'animals_id' => 'required',
         ];
     }
 }
